@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'telegram/bot'
+require 'dotenv/load'
+require './lib/responder.rb'
+
+Telegram::Bot::Client.run(ENV['TELEGRAM_TOKEN']) do |bot|
+  puts "POLLING IS STARTED"
+
+  bot.listen do |message|
+    Responder.execute(bot, message)
+  end
+end
