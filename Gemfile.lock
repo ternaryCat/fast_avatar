@@ -46,6 +46,7 @@ GEM
       faraday
       virtus (~> 2.0)
     thread_safe (0.3.6)
+    victor (0.3.3)
     virtus (2.0.0)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -53,12 +54,14 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   dotenv
   i18n
   pry
   telegram-bot-ruby
+  victor
 
 RUBY VERSION
    ruby 3.0.2p107

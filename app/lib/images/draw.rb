@@ -15,20 +15,28 @@ module Images
           options: options
         )
 
-        MiniMagick::Tool::Mogrify.new do |morgify|
-          morgify.resize('500x500');
-          morgify.format('png');
-          morgify << file.path;
+        png_file_path = "./tmp/#{File.basename(file, File.extname(file))}.png"
+        if File.exist?(png_file_path)
+          block.call(png_file_path)
+          return
         end
-        file.close
 
-        png_file_path = "#{file.path}.png"
+        `rsvg-convert #{file.path} > #{png_file_path}`
         block.call(png_file_path)
-        File.delete(png_file_path)
+
+        # File.delete(file.path)
+        # File.delete(png_file_path)
       end
 
       def svg_file(seed:, width:, height:, emoji_size:, colors:, background:, options:)
-        file = Tempfile.new(seed.to_s, './tmp')
+        filename = "./tmp/#{seed}.svg"
+        if File.exist?(filename)
+          file = File.open(filename, 'r')
+          file.close
+          return file
+        end
+
+        file = File.open(filename, 'w')
         file.write(
           svg(
             seed: seed,
@@ -40,6 +48,7 @@ module Images
             options: options
           )
         )
+        file.close
 
         file
       end
