@@ -8,7 +8,7 @@ module Images
       def initialize(chaos:, width:, height:, colors:)
         @width = width
         @height = height
-        @background = '#F26798'
+        @background = colors.sample(random: chaos)
       end
 
       def svg
