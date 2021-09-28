@@ -10,6 +10,19 @@ services:
       - ./:/home/project
       - backend-modules:/usr/local/bundle
     env_file: .env
+    links:
+      - postgresql
+
+  postgresql:
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
+    platform: linux/amd64
+    volumes:
+      - postgres-data:/data
+    env_file: .env
+
 
 volumes:
   backend-modules:
+  postgres-data:
