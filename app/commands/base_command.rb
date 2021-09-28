@@ -12,6 +12,6 @@ class BaseCommand
   attr_reader :bot, :message
 
   def current_user
-    User.find(id: message.from.id)
+    User.find(uid: message.from.id)
   end
 end
