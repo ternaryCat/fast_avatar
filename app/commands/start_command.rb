@@ -1,7 +1,7 @@
 require_relative 'base_command'
 
 class StartCommand < BaseCommand
-  def execute
+  def execute(*args, **options)
     user = User.insert(user_params(message.from)) unless current_user
 
     bot.api.send_message(chat_id: message.chat.id, text: I18n.t('welcome'), reply_markup: reply_markup)

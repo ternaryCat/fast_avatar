@@ -6,3 +6,6 @@ ru:
     generate: 🖼 Генерация
     menu: 📲 Меню
     about: 😲 О боте
+  images:
+    png: 👩‍🎨 PNG
+    svg: 👨‍🎨 SVG
