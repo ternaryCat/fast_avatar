@@ -1,6 +1,6 @@
 ru:
   welcome: "Привет! 👋\nОтправь /generate чтобы получить аватар."
-  about: "Этот бот генерирует 🖼 аватраки из комбинации одного из 4х фонов и Apple emoji."
+  about: "Этот бот генерирует 🖼 аватраки из комбинации одного из пяти фонов и Apple emoji."
   menu: 👇 Menu 👇
   messages:
     generate: 🖼 Генерация
