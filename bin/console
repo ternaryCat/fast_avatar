@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'irb'
+Dir["./app/**/*.rb"].each {|file| require file }
+
+IRB.start(__FILE__)
