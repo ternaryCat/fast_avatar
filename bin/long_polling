@@ -9,5 +9,8 @@ Telegram::Bot::Client.run(ENV['TELEGRAM_TOKEN']) do |bot|
 
   bot.listen do |message|
     Responder.execute(bot, message)
+  rescue Exception => e
+    # TODO: add logger
+    puts e
   end
 end
