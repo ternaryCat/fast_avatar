@@ -4,7 +4,7 @@ require_relative 'base_command'
 
 class SvgCommand < BaseCommand
   def execute(*args, **options)
-    Metric.insert(title: '/svg', description: options[:seed], user_id: current_user.id)
+    Metric.insert(title: '/svg', description: options[:seed], user_id: current_user&.id)
 
     file = Images::Draw.svg_file(
       seed: options[:seed],
