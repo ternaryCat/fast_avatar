@@ -84,7 +84,7 @@ module Images
         svg.defs do
           svg.radialGradient id: :gradient do
             svg.stop offset: '0%', 'stop-color': :transparent, 'stop-opacity': 0
-            svg.stop offset: '100%', 'stop-color': '#000', 'stop-opacity': 0.5
+            svg.stop offset: '100%', 'stop-color': '#000', 'stop-opacity': 0.3
           end
         end
 

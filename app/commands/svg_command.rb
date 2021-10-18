@@ -10,7 +10,7 @@ class SvgCommand < BaseCommand
       seed: options[:seed],
       width: 500,
       height: 500,
-      emoji_size: 160,
+      emoji_size: Images::MAX_EMOJI_SIZE,
       colors: Images::COLORS_SCHEMES.sample(random: Random.new(options[:seed])),
       background: Images::BACKGROUNDS.sample(random: Random.new(options[:seed])),
       options: {}

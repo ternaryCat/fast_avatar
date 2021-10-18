@@ -15,7 +15,7 @@ class GenerateCommand < BaseCommand
       seed: seed,
       width: 500,
       height: 500,
-      emoji_size: 160,
+      emoji_size: Images::MAX_EMOJI_SIZE,
       colors: Images::COLORS_SCHEMES.sample(random: Random.new(seed)),
       background: Images::BACKGROUNDS.sample(random: Random.new(seed)),
       options: {}
