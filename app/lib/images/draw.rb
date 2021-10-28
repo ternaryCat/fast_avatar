@@ -1,5 +1,4 @@
 require 'victor'
-require 'mini_magick'
 
 module Images
   class Draw
