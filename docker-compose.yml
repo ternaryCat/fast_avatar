@@ -23,7 +23,6 @@ services:
       - postgres-data:/data
     env_file: .env
 
-
 volumes:
   backend-modules:
   postgres-data:
